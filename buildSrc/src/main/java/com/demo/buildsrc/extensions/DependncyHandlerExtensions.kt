@@ -12,6 +12,9 @@ fun DependencyHandler.kapt(list: List<String>) {
         add("kapt", dependency)
     }
 }
+fun DependencyHandler.kapt(dependency:String) {
+        add("kapt", dependency)
+}
 
 /**
  * Extension to adds a list of third party that used implementation function.

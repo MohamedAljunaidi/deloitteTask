@@ -3,10 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.nytimesapp.presentations.login.LoginViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginFragment">
+        tools:context=".presentations.login.LoginFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailInputLayout"
@@ -71,6 +78,7 @@
             android:paddingTop="@dimen/_12sdp"
             android:paddingBottom="@dimen/_12sdp"
             android:text="@string/title_login"
+            android:onClick="@{() -> viewModel.doValidationTheLogin(emailEditText.getText().toString(),passwordEditText.getText().toString())}"
             android:textAllCaps="false"
             app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"

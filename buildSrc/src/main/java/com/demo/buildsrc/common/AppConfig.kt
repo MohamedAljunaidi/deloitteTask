@@ -24,6 +24,7 @@ object AppConfig {
     object ModulePathsConstant {
         const val APP = ":app"
         const val CORE = ":core"
+        const val CACHING = ":caching"
     }
 
 }

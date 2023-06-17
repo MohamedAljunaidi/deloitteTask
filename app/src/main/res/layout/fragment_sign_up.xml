@@ -3,10 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.demo.nytimesapp.presentations.signup.SignUpViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".signup.SignUpFragment">
+        tools:context=".presentations.signup.SignUpFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fullNameSignUpInputLayout"
@@ -123,7 +130,7 @@
             app:layout_constraintTop_toBottomOf="@+id/phoneNumberSignUpInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dateOfBirthSignUpEditText"
+                android:id="@+id/birthSignUpEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
@@ -159,7 +166,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginButton"
+            android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
@@ -168,8 +175,9 @@
             android:includeFontPadding="false"
             android:paddingTop="@dimen/_12sdp"
             android:paddingBottom="@dimen/_12sdp"
-            android:text="@string/title_login"
+            android:text="@string/title_signup"
             android:textAllCaps="false"
+            android:onClick="@{() -> viewModel.doValidationTheSignUp(fullNameSignUpEditText.getText().toString(),emailSignUpEditText.getText().toString(),nationalIdSignUpEditText.getText().toString(),phoneNumberSignUpEditText.getText().toString(), birthSignUpEditText.getText().toString(),passwordSignUpEditText.getText().toString())}"
             app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

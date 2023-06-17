@@ -22,6 +22,8 @@ android {
 
 dependencies {
     implementation(project(AppConfig.ModulePathsConstant.CORE))
+    implementation(project(AppConfig.ModulePathsConstant.CACHING))
+
     implementation(DependencyGroups.androidDependencies)
     implementation(DependencyGroups.constraintDependencies)
     implementation(DependencyGroups.hiltDependencies)

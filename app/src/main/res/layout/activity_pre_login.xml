@@ -17,7 +17,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".PreLoginActivity">
+            tools:context=".presentations.PreLoginActivity">
 
             <com.demo.core.CustomToolbar
                 android:id="@+id/toolbarRegistrationToolbar"

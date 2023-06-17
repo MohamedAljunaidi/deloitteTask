@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.demo.nytimesapp.login.LoginFragment"
+        android:name="com.demo.nytimesapp.presentations.login.LoginFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.demo.nytimesapp.signup.SignUpFragment"
+        android:name="com.demo.nytimesapp.presentations.signup.SignUpFragment"
         android:label="@string/title_more"
         tools:layout="@layout/fragment_sign_up" />
 
