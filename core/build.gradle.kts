@@ -20,7 +20,4 @@ dependencies {
     kapt(Dependencies.glideCompiler)
     implementation(DependencyGroups.hiltDependencies)
     kapt(DependencyGroups.hiltKaptDependencies)
-
-    implementation("com.intuit.ssp:ssp-android:1.0.6")
-    implementation("com.intuit.sdp:sdp-android:1.0.6")
-}
+    implementation(DependencyGroups.sizeDependencies)}

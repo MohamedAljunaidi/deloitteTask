@@ -5,7 +5,6 @@ import com.demo.core.bases.ResultWrapper
 import com.demo.nytimesapp.common.UseCaseConstants
 import com.demo.nytimesapp.domain.login.repository.ILoginRepository
 import com.demo.nytimesapp.domain.signup.model.User
-import com.demo.nytimesapp.domain.signup.repository.ISignUpRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

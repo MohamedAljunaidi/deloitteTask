@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.demo.core.bases.BaseBindingActivity
 import com.demo.nytimesapp.R
 import com.demo.nytimesapp.databinding.ActivityPreLoginBinding
@@ -17,8 +19,15 @@ class PreLoginActivity : BaseBindingActivity<ActivityPreLoginBinding>(R.layout.a
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         navController = findNavController(R.id.nav_host_fragment_pre_login)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.loginFragment, R.id.signUpFragment
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
         onDestinationChanged()
         onTabSelected()
         onBackPressedScreen()
@@ -80,11 +89,9 @@ class PreLoginActivity : BaseBindingActivity<ActivityPreLoginBinding>(R.layout.a
     private fun getDestinationForTab(position: Int): Int {
         return when (position) {
             0 -> {
-                viewBinding?.title = getString(R.string.title_login)
                 R.id.loginFragment
             }
             1 -> {
-                viewBinding?.title = getString(R.string.title_signup)
                 R.id.signUpFragment
             }
             else -> throw IllegalArgumentException("Invalid tab position")

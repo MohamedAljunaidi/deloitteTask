@@ -7,6 +7,5 @@ package com.demo.core.bases
 sealed class ResultWrapper<out T : Any?> {
     data class Success<out T : Any?>(val data: T) : ResultWrapper<T>()
 
-    // TODO Change Error Type depends on Error Model that return from APIs
     data class Error(val error: ResultException) : ResultWrapper<Nothing>()
 }

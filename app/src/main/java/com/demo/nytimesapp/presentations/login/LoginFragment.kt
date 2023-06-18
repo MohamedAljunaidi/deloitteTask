@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import com.demo.core.bases.BaseFragment
 import com.demo.core.extensions.collectLatest
-import com.demo.core.extensions.showToast
 import com.demo.nytimesapp.R
 import com.demo.nytimesapp.databinding.FragmentLoginBinding
 import com.demo.nytimesapp.presentations.MainActivity
@@ -30,6 +29,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(R.layou
 
     private fun handleLoginSuccess(loggedIn: Boolean?) {
         startActivity(Intent(requireContext(), MainActivity::class.java))
+        requireActivity().finish()
     }
 
     private fun handleValidationError(validationError: ValidationViewState) {

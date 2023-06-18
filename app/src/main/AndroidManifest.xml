@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.demo.nytimesapp" >
+    package="com.demo.nytimesapp">
 
     <application
         android:name=".MyApplication"
@@ -13,28 +13,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NYTimesApp"
-        tools:targetApi="31" >
+        android:localeConfig="@xml/locales_config"
+        tools:targetApi="31">
 
         <activity
             android:name=".presentations.PreLoginActivity"
-            android:exported="false" >
-        </activity>
+            android:screenOrientation="portrait"
+            android:exported="false"/>
         <activity
             android:name=".presentations.MainActivity"
             android:exported="true"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_main"/>
         <activity
             android:name=".presentations.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashScreenTheme" >
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
     </application>
 
 </manifest>

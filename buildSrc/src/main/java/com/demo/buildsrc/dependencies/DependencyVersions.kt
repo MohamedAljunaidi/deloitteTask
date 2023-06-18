@@ -15,7 +15,7 @@ object DependencyVersions {
     const val gson_version = "2.9.1"
     const val viewModel_version = "2.6.1"
     const val core_version = "1.8.0"
-    const val appcompat_version = "1.4.2"
+    const val appcompat_version = "1.7.0-alpha02"
     const val material_version = "1.6.1"
     const val fragment_version="1.5.1"
 
@@ -35,6 +35,9 @@ object DependencyVersions {
     const val turbine_version = "0.12.1"
 
     const val room_version = "2.4.2"
+    const val ssp_version = "1.0.6"
+    const val sdp_version = "1.0.6"
+    const val preference = "1.2.0"
 
     const val swipe_refresh_version = "1.1.0"
 }

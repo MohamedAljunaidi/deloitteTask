@@ -15,6 +15,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
         viewModel.text.observe(viewLifecycleOwner) {
             viewBinding?.textHome?.text = it
         }
-    }
 
+    }
 }

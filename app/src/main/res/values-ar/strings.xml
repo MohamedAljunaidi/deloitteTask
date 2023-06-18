@@ -25,6 +25,8 @@
     <string name="success_sign_up">تم التسجيل بنجاح</string>
     <string name="error_validation_login_invalid">البريد الإلكتروني أو كلمة السر خاطئة</string>
     <string name="success_login">تم تسجيل الدخول بنجاح</string>
-
-
+    <string name="label_details">تفاصيل</string>
+    <string name="label_logout">تسجيل خروج</string>
+    <string name="label_settings">إعدادات</string>
+    <string name="setting_change_language">تغيير اللغة</string>
 </resources>

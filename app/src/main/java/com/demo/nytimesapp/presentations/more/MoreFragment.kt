@@ -1,44 +1,51 @@
 package com.demo.nytimesapp.presentations.more
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.demo.core.bases.BaseFragment
+import com.demo.core.extensions.collectLatest
+import com.demo.nytimesapp.R
 import com.demo.nytimesapp.databinding.FragmentMoreBinding
+import com.demo.nytimesapp.domain.signup.model.User
+import com.demo.nytimesapp.presentations.PreLoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MoreFragment : Fragment() {
+class MoreFragment : BaseFragment<FragmentMoreBinding, MoreViewModel>(R.layout.fragment_more) {
 
-    private var _binding: FragmentMoreBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding !!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val moreViewModel =
-            ViewModelProvider(this).get(MoreViewModel::class.java)
-
-        _binding = FragmentMoreBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        moreViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getUserDetails()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initDataBinding()
+        collectLatest(viewModel.personalDetailsSuccess, ::handleUserDetailsSuccess)
+        collectLatest(viewModel.state, ::handleViewState)
+        viewLifecycleOwner.collectLatest(viewModel.viewState, ::handleMoreState)
+    }
+
+    private fun initDataBinding() {
+        viewBinding?.viewModel = viewModel
+    }
+
+    private fun handleUserDetailsSuccess(user: User?) {
+        viewBinding?.user = user
+    }
+
+    private fun handleMoreState(viewState: MoreViewState?) {
+        when (viewState) {
+            is MoreViewState.LogoutUser -> {
+                startActivity(Intent(requireActivity(), PreLoginActivity::class.java))
+                requireActivity().finish()
+            }
+            is MoreViewState.NavigateToSettings -> {
+                findNavController().navigate(MoreFragmentDirections.actionHomeFragmentToSettingFragment())
+            }
+            else -> {}
+        }
     }
 }

@@ -27,7 +27,8 @@ object Dependencies {
 
     const val navigationFragment =
         "androidx.navigation:navigation-fragment-ktx:${DependencyVersions.navigation_version}"
-    const val navigation = "androidx.navigation:navigation-ui-ktx:${DependencyVersions.navigation_version}"
+    const val navigation =
+        "androidx.navigation:navigation-ui-ktx:${DependencyVersions.navigation_version}"
 
     const val viewModel =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${DependencyVersions.viewModel_version}"
@@ -55,7 +56,7 @@ object Dependencies {
 
 
     const val preferencesDataStore =
-      "androidx.datastore:datastore-preferences:${DependencyVersions.preferences_datastore_version}"
+        "androidx.datastore:datastore-preferences:${DependencyVersions.preferences_datastore_version}"
     const val recyclerview =
         "androidx.recyclerview:recyclerview:${DependencyVersions.recyclerview_version}"
 
@@ -67,11 +68,13 @@ object Dependencies {
     }"
     const val turbine = "app.cash.turbine:turbine:${DependencyVersions.turbine_version}"
 
-   const val swipeRefreshLayout =
+    const val swipeRefreshLayout =
         "androidx.swiperefreshlayout:swiperefreshlayout:${DependencyVersions.swipe_refresh_version}"
 
     const val roomPaging = "androidx.room:room-paging:${DependencyVersions.room_version}"
     const val room = "androidx.room:room-ktx:${DependencyVersions.room_version}"
     const val roomCompiler = "androidx.room:room-compiler:${DependencyVersions.room_version}"
-
+    const val ssp = "com.intuit.ssp:ssp-android:${DependencyVersions.ssp_version}"
+    const val sdp = "com.intuit.sdp:sdp-android:${DependencyVersions.sdp_version}"
+    const val preference="androidx.preference:preference-ktx:${DependencyVersions.preference}"
 }

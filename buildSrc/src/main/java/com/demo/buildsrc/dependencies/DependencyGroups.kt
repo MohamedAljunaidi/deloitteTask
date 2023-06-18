@@ -63,4 +63,11 @@ object DependencyGroups {
         add(Dependencies.room)
         add(Dependencies.roomPaging)
     }
+
+    val sizeDependencies = arrayListOf<String>().apply {
+        add(Dependencies.ssp)
+        add(Dependencies.sdp)
+    }
+
+
 }
