@@ -18,3 +18,4 @@ rootProject.name = "NYTimesApp"
 include (":app")
 include(":core")
 include(":caching")
+include(":network")

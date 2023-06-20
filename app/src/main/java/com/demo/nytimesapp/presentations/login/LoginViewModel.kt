@@ -59,7 +59,7 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun doLogin(
+     fun doLogin(
         email: String, password: String
     ) {
         launchCoroutine(coroutineExceptionHandler) {

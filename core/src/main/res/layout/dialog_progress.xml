@@ -9,7 +9,7 @@
         android:clickable="true"
         android:focusable="true">
 
-        <ImageView
+        <ProgressBar
             android:id="@+id/imageProgress"
             android:layout_width="55dp"
             android:layout_height="55dp"

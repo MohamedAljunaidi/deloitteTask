@@ -2,6 +2,7 @@ package com.demo.buildsrc.buildtype
 
 import com.android.build.api.dsl.LibraryExtension
 import com.demo.buildsrc.common.AppConfig.BuildTypeConstant
+import com.demo.buildsrc.extensions.extractProperties
 import org.gradle.api.Project
 
 /**
@@ -17,6 +18,10 @@ object BuildTypeLibrary {
 
         libraryExtension.apply {
             buildTypes {
+                all {
+                    val properties= project.extractProperties(this)
+                    ConfigApp.initConfigData(buildType = this, properties = properties)
+                }
                 maybeCreate(BuildTypeConstant.RELEASE)
                 getByName(BuildTypeConstant.RELEASE) {
                     isMinifyEnabled = false

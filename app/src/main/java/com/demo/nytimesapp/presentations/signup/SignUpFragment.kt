@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.demo.core.bases.BaseFragment
 import com.demo.core.extensions.collectLatest
+import com.demo.core.extensions.showDatePickerDialog
 import com.demo.core.extensions.showToast
 import com.demo.nytimesapp.R
 import com.demo.nytimesapp.databinding.FragmentSignUpBinding
@@ -19,6 +20,9 @@ class SignUpFragment :
         collectLatest(viewModel.signUpSuccess, ::handleSignUpSuccess)
         collectLatest(viewModel.state, ::handleViewState)
         collectLatest(viewModel.validationError, ::handleValidationError)
+        viewBinding?.birthSignUpEditText?.setOnClickListener {
+            requireContext().showDatePickerDialog(viewBinding?.birthSignUpEditText)
+        }
     }
 
     private fun initDataBinding() {

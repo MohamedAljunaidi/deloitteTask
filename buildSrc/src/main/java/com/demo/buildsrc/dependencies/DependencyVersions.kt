@@ -16,7 +16,7 @@ object DependencyVersions {
     const val viewModel_version = "2.6.1"
     const val core_version = "1.8.0"
     const val appcompat_version = "1.7.0-alpha02"
-    const val material_version = "1.6.1"
+    const val material_version = "1.8.0"
     const val fragment_version="1.5.1"
 
     const val junitTestImplementation_version = "4.13.2"

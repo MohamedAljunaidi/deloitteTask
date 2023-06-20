@@ -23,7 +23,10 @@ android {
 dependencies {
     implementation(project(AppConfig.ModulePathsConstant.CORE))
     implementation(project(AppConfig.ModulePathsConstant.CACHING))
+    implementation(project(AppConfig.ModulePathsConstant.NETWORK))
 
+    implementation(Dependencies.swipeRefreshLayout)
+    implementation(DependencyGroups.retrofitDependencies)
     implementation(DependencyGroups.androidDependencies)
     implementation(DependencyGroups.constraintDependencies)
     implementation(DependencyGroups.hiltDependencies)
@@ -35,4 +38,5 @@ dependencies {
     implementation(DependencyGroups.navigationDependencies)
     implementation(DependencyGroups.junitTestImplementationDependencies)
     implementation(DependencyGroups.junitAndroidTestImplementation)
+    implementation(DependencyGroups.mockitoTestImplementation)
 }

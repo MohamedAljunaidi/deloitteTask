@@ -22,11 +22,6 @@ class ProgressDialog(private val mContext: Context) : AppCompatDialog(mContext) 
         )
         setContentView(binding.root)
 
-        Glide
-            .with(mContext)
-            .load(R.drawable.ic_logo)
-            .into(binding.imageProgress)
-
         window?.let {
             it.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             it.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)

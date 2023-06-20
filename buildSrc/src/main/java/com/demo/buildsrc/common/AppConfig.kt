@@ -19,12 +19,21 @@ object AppConfig {
     object BuildTypeConstant {
         const val RELEASE = "release"
     }
+    object BuildConfigField {
 
+        const val BASE_URL_KEY = "BASE_URL"
+        const val BASE_URL_VALUE = "base_url"
+
+        const val API_KEY = "API_KEY"
+        const val API_KEY_VALUE = "api_key"
+
+
+    }
 
     object ModulePathsConstant {
-        const val APP = ":app"
         const val CORE = ":core"
         const val CACHING = ":caching"
+        const val NETWORK = ":network"
     }
 
 }

@@ -29,4 +29,9 @@
     <string name="label_logout">تسجيل خروج</string>
     <string name="label_settings">إعدادات</string>
     <string name="setting_change_language">تغيير اللغة</string>
+    <string name="data">البيانات</string>
+    <string name="sort">الترتيب</string>
+    <string name="search">بحث…</string>
+    <string name="descending">تنارلي</string>
+    <string name="ascending">تصاعدي</string>
 </resources>

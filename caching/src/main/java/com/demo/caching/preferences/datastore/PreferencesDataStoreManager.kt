@@ -47,6 +47,6 @@ class PreferencesDataStoreManager @Inject constructor(@ApplicationContext contex
     companion object {
 
         const val SHARED_PREFERENCES_NAME = "AppPreferencesManager"
-        const val PREFERENCES_DATA_STORE_NAME = "MallsPreferences"
+        const val PREFERENCES_DATA_STORE_NAME = "NyTimePreferences"
     }
 }
